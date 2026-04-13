@@ -5,13 +5,13 @@ import { notFound } from "next/navigation";
 import { blogPosts, siteConfig } from "@/data/site";
 
 type BlogPageProps = {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 };
 
 export async function generateMetadata({
   params,
 }: BlogPageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) {
     return { title: "Article Not Found" };
@@ -27,8 +27,8 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function BlogArticlePage({ params }: BlogPageProps) {
-  const { slug } = await params;
+export default function BlogArticlePage({ params }: BlogPageProps) {
+  const { slug } = params;
   const post = blogPosts.find((item) => item.slug === slug);
 
   if (!post) notFound();

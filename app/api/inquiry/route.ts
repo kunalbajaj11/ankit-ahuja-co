@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const RECEIVER_EMAILS = ["caankitahuja1@gmail.com", "anshum.ahuja@gmail.com"];
+export const runtime = "edge";
 
 type InquiryPayload = {
   source: "contact-page" | "lead-popup";
