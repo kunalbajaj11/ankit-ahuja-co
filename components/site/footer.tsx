@@ -67,7 +67,18 @@ export function Footer() {
       </div>
 
       <div className="border-t border-slate-200 px-4 py-4 text-center text-xs text-slate-600">
-        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.{" "}
+        <span className="ml-1">
+          Powered by{" "}
+          <a
+            href="https://stryvon.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-primary hover:underline"
+          >
+            Stryvon.AI
+          </a>
+        </span>
       </div>
     </footer>
   );
