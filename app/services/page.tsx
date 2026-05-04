@@ -23,8 +23,11 @@ export default function ServicesPage() {
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         {detailedServices.map((service, idx) => (
-          <FadeIn key={service.title} delay={idx * 0.06}>
-            <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <FadeIn key={service.slug} delay={idx * 0.06}>
+            <article
+              id={service.slug}
+              className="h-full scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
               <h2 className="text-xl font-bold text-primary">{service.title}</h2>
               <p className="mt-3 text-slate-700">{service.description}</p>
               <ul className="mt-4 space-y-2 text-sm text-slate-700">

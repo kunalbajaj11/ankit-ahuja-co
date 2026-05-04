@@ -29,8 +29,78 @@ export const primaryServices = [
   "Advisory Services",
 ];
 
+export const valuePillars = [
+  {
+    title: "Professional, end-to-end support",
+    description:
+      "From registrations to year-end filings, you get structured guidance from qualified chartered accountants who stay accountable for timelines and quality.",
+  },
+  {
+    title: "Client-first communication",
+    description:
+      "We explain options in plain language, document assumptions clearly, and respond quickly so owners and finance teams always know the next step.",
+  },
+  {
+    title: "Confidentiality and discipline",
+    description:
+      "Your data is handled with care, access is limited to the engagement team, and we maintain audit-ready records so compliance does not become a last-minute scramble.",
+  },
+];
+
+export type FeaturedPlan = {
+  title: string;
+  priceLabel: string;
+  turnaround: string;
+  bullets: string[];
+};
+
+export const featuredPlans: FeaturedPlan[] = [
+  {
+    title: "Bookkeeping & MIS",
+    priceLabel: "Indicative from ₹1,199 / month*",
+    turnaround: "Monthly books and reports",
+    bullets: ["CA-reviewed reconciliations", "Discovery call included"],
+  },
+  {
+    title: "TDS return filing",
+    priceLabel: "Indicative from ₹1,799 / quarter*",
+    turnaround: "Typical delivery within a week",
+    bullets: ["Challan and ledger checks", "Notice support on request"],
+  },
+  {
+    title: "GST return filing",
+    priceLabel: "Indicative from ₹1,099 / month*",
+    turnaround: "Filed after reconciliation review",
+    bullets: ["GSTR-1 / 3B as applicable", "ITC hygiene checklist"],
+  },
+  {
+    title: "GST registration",
+    priceLabel: "Indicative from ₹2,499*",
+    turnaround: "Document-led timeline",
+    bullets: ["Application drafting", "Query handling support"],
+  },
+];
+
+export const complianceDeadline = {
+  title: "Upcoming filing window",
+  description:
+    "GST returns and related compliances attract interest when delayed. Share your data early so filings can be reviewed calmly before the due date.",
+  /** IANA timezone for display */
+  timeZone: "Asia/Kolkata",
+  /** ISO instant for countdown target */
+  endAt: "2026-05-11T23:59:59+05:30",
+};
+
+export const firmStats = [
+  { label: "Practice focus", value: "Tax, GST & assurance" },
+  { label: "Serving", value: "Delhi NCR businesses" },
+  { label: "Engagement style", value: "CA-led, documented" },
+  { label: "Response aim", value: "Same-week on routine queries" },
+];
+
 export const detailedServices = [
   {
+    slug: "tax-filing-planning",
     title: "Tax Filing & Planning",
     description:
       "Accurate filing with practical planning strategies to reduce tax burden and avoid notices.",
@@ -41,6 +111,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "gst-registration-filing",
     title: "GST Registration & Filing",
     description:
       "End-to-end GST setup and return filing for businesses, startups, and service providers.",
@@ -51,6 +122,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "audit-assurance",
     title: "Audit & Assurance",
     description:
       "Independent and detail-oriented audits that improve reliability and stakeholder confidence.",
@@ -61,6 +133,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "bookkeeping-accounting",
     title: "Bookkeeping & Accounting",
     description:
       "Reliable bookkeeping and MIS preparation to give business owners clear decision-ready numbers.",
@@ -71,6 +144,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "business-registration",
     title: "Business Registration",
     description:
       "Support for company, LLP, and related registrations so you can launch and operate with confidence.",
@@ -81,6 +155,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "compliance-regulatory",
     title: "Compliance & Regulatory",
     description:
       "Structured compliance management across direct tax, GST, and corporate obligations.",
@@ -91,6 +166,7 @@ export const detailedServices = [
     ],
   },
   {
+    slug: "startup-advisory",
     title: "Startup Advisory",
     description:
       "Practical CA advisory for early-stage founders on structuring, taxes, and operational setup.",
@@ -117,6 +193,16 @@ export const testimonials = [
     quote:
       "As a startup, we needed practical CA support from day one. They handled registration, filings, and planning smoothly.",
     name: "Startup Founder",
+  },
+  {
+    quote:
+      "Notices were explained calmly, options were laid out with pros and cons, and the follow-through until closure was excellent.",
+    name: "Services Company, CFO",
+  },
+  {
+    quote:
+      "Bookkeeping was messy after a rapid hiring phase. They standardized charts, closed gaps, and our MIS finally matches the bank.",
+    name: "Growth-stage employer",
   },
 ];
 

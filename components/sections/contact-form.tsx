@@ -82,7 +82,7 @@ export function ContactForm() {
         >
           <option value="">Select Service</option>
           {detailedServices.map((service) => (
-            <option key={service.title} value={service.title}>
+            <option key={service.slug} value={service.title}>
               {service.title}
             </option>
           ))}

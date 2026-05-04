@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-import { siteConfig } from "@/data/site";
+import { detailedServices, siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         <div>
           <h3 className="text-lg font-bold text-primary">{siteConfig.name}</h3>
           <p className="mt-2 text-sm text-slate-600">{siteConfig.tagline}</p>
@@ -29,6 +29,23 @@ export function Footer() {
             <Link href="/contact" className="hover:text-primary">
               Contact
             </Link>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-800">
+            Practice areas
+          </h4>
+          <div className="mt-3 flex flex-col gap-2 text-sm text-slate-700">
+            {detailedServices.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services#${service.slug}`}
+                className="hover:text-primary"
+              >
+                {service.title}
+              </Link>
+            ))}
           </div>
         </div>
 
